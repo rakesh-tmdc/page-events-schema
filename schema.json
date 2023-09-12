@@ -1,0 +1,112 @@
+{
+    "$schema": "http://json-schema.org/draft-01/schema",
+    "type": "object",
+    "properties": {
+        "event_type": {
+            "type": "string",
+            "description": "The type or category of the event."
+        },
+        "event_name": {
+            "type": "string",
+            "description": "The name of the event."
+        },
+        "event_timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date and time when the event occurred."
+        },
+        "user_id": {
+            "type": [
+                "string",
+                "number"
+            ],
+            "description": "The identifier for the user who triggered the event."
+        },
+        "session_id": {
+            "type": [
+                "string",
+                "number"
+            ],
+            "description": "The identifier for the user's session."
+        },
+        "page_name_url": {
+            "type": "string",
+            "description": "The name or URL of the page where the event occurred."
+        },
+        "event_properties": {
+            "type": "object",
+            "description": "Additional event-specific properties as key-value pairs."
+        },
+        "app_name": {
+            "type": "string",
+            "description": "The name of the app where the event occurred."
+        },
+        "app_version": {
+            "type": "string",
+            "description": "The version of the app where the event occurred."
+        },
+        "user_agent": {
+            "type": "string",
+            "description": "The user agent string, which provides additional device and browser information."
+        },
+        "referrer": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "uri",
+            "description": "The source URL or referrer, if the event resulted from a referral."
+        },
+        "event_outcome": {
+            "type": "string",
+            "description": "The outcome or result of the event, if applicable."
+        },
+        "search_filter_interactions": {
+            "type": "object",
+            "properties": {
+                "search_queries": {
+                    "type": "object",
+                    "description": "List of search queries entered by users within the catalog."
+                },
+                "filter_selections": {
+                    "type": "object"
+                }
+            }
+        },
+        "performance_metrics": {
+            "type": "object",
+            "properties": {
+                "page_load_time_ms": {
+                    "type": "integer",
+                    "description": "Page load time in milliseconds."
+                },
+                "resource_load_times_ms": {
+                    "type": "object",
+                    "properties": {
+                        "image_load_time_ms": {
+                            "type": "integer",
+                            "description": "Time taken to load images in milliseconds."
+                        },
+                        "metadata_load_time_ms": {
+                            "type": "integer",
+                            "description": "Time taken to load metadata in milliseconds."
+                        }
+                    },
+                    "description": "Loading times for various page resources."
+                }
+            },
+            "description": "Performance metrics related to page loading."
+        }
+    },
+    "required": [
+        "event_name",
+        "event_type",
+        "event_timestamp",
+        "user_id",
+        "session_id",
+        "app_name",
+        "app_version",
+        "user_agent"
+    ]
+}
+
