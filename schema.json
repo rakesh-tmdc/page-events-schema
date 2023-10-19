@@ -10,9 +10,8 @@
             "type": "string",
             "description": "The name of the event."
         },
-        "event_timestamp": {
-            "type": "string",
-            "format": "date-time",
+        "timestamp": {
+            "type": "integer",
             "description": "The date and time when the event occurred."
         },
         "user_id": {
@@ -29,9 +28,13 @@
             ],
             "description": "The identifier for the user's session."
         },
-        "page_name_url": {
+        "page_name": {
             "type": "string",
-            "description": "The name or URL of the page where the event occurred."
+            "description": "The name of the page where the event occurred."
+        },
+        "page_url": {
+            "type": "string",
+            "description": "The URL of the page where the event occurred."
         },
         "event_properties": {
             "type": "object",
@@ -65,9 +68,13 @@
             "type": "object",
             "properties": {
                 "search_queries": {
-                    "type": "object",
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "description": "Search queries entered by users within the catalog."
+                    },
                     "description": "List of search queries entered by users within the catalog."
-                },
+                  },
                 "filter_selections": {
                     "type": "object"
                 }
@@ -101,7 +108,7 @@
     "required": [
         "event_name",
         "event_type",
-        "event_timestamp",
+        "timestamp",
         "user_id",
         "session_id",
         "app_name",
@@ -109,4 +116,3 @@
         "user_agent"
     ]
 }
-
