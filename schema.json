@@ -110,7 +110,6 @@
         "event_type",
         "timestamp",
         "user_id",
-        "session_id",
         "app_name",
         "app_version",
         "user_agent"
