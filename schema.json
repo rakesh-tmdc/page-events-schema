@@ -15,7 +15,7 @@
             "description": "The date and time when the event occurred."
         },
         "user_id": {
-            "type": "number",
+            "type": "string",
             "description": "The identifier for the user who triggered the event."
         },
         "session_id": {
