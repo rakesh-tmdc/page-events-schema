@@ -15,17 +15,11 @@
             "description": "The date and time when the event occurred."
         },
         "user_id": {
-            "type": [
-                "string",
-                "number"
-            ],
+            "type": "number",
             "description": "The identifier for the user who triggered the event."
         },
         "session_id": {
-            "type": [
-                "string",
-                "number"
-            ],
+            "type": "string",
             "description": "The identifier for the user's session."
         },
         "page_name": {
@@ -48,21 +42,13 @@
             "type": "string",
             "description": "The version of the app where the event occurred."
         },
-        "user_agent": {
-            "type": "string",
-            "description": "The user agent string, which provides additional device and browser information."
-        },
-        "referrer": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "format": "uri",
-            "description": "The source URL or referrer, if the event resulted from a referral."
-        },
         "event_outcome": {
             "type": "string",
             "description": "The outcome or result of the event, if applicable."
+        },
+        "referrer": {
+            "type": "string",
+            "description": "The source URL or referrer, if the event resulted from a referral."
         },
         "search_filter_interactions": {
             "type": "object",
@@ -103,6 +89,10 @@
                 }
             },
             "description": "Performance metrics related to page loading."
+        },
+        "user_agent": {
+            "type": "string",
+            "description": "The user agent string, which provides additional device and browser information."
         }
     },
     "required": [
